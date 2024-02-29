@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/google-fonts',
-    'nuxt-icon'
+    'nuxt-icon',
+    'vue3-carousel-nuxt'
   ],
   googleFonts: {
     families: {

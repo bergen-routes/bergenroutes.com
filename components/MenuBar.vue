@@ -4,7 +4,6 @@ const showFullNavShadow = ref(false)
 onMounted(()=>{
     window.addEventListener('scroll', ()=>{
         showFullNavShadow.value = window.scrollY > 10
-        console.log(showFullNavShadow.value)
     })
 })
 </script>
