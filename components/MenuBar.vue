@@ -37,7 +37,6 @@ header.menu_bar {
     top: 0px;
     left: 0px;
     right: 0px;
-    background-color: white;
 
     >.full_nav {
         display: none;
@@ -85,6 +84,7 @@ header.menu_bar {
         align-items: center;
         padding: 0 .25rem 0 1rem;
         transition: box-shadow 200ms ease-in-out;
+        background-color: white;
         
         &.show_shadow{
             box-shadow: 0px 1px 4px 0px var(--g2);

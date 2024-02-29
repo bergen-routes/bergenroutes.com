@@ -4,7 +4,7 @@
 
 <template>
     <section class="story">
-        <div class="content_wrapper">
+        <div class="mobile">
             <h1>How it Started</h1>
             <img src="/images/temp_media.svg">
             <p>
@@ -22,7 +22,7 @@
     padding: 1rem;
     color: var(--g4);
 
-    >.content_wrapper {
+    >.mobile {
         max-width: 960px;
         margin: 0 auto;
         >img {
