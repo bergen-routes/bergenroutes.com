@@ -7,6 +7,7 @@
     <div class="stack">
         <StackIntro />
         <StackAbout />
+        <StackStory />
     </div>
 </template>
 

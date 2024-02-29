@@ -23,4 +23,6 @@ Content: In the age of portable electronics, the use of maps and directories hav
 
 **Story:**
 Initial proposal will show give a brief description of the applications inception through the cs club.
-Production will showcase the team giving presentations and such
+Production will showcase the team giving presentations and such.
+Accolades will show a scan of the Bergen Routes poster competition award.
+
