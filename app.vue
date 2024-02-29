@@ -24,6 +24,7 @@ body {
     --brand-purple: rebeccapurple;
     --brand-orange: #F39E00;
     --brand-orange-border: #dc8f00;
+    --g0: #fafafa;
     --g1: #f6f6f6;
     --g2: #ededed;
     --g3: lightgray;

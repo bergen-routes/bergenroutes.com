@@ -1,4 +1,12 @@
 <script setup lang="ts">
+const showFullNavShadow = ref(false)
+
+onMounted(()=>{
+    window.addEventListener('scroll', ()=>{
+        showFullNavShadow.value = window.scrollY > 10
+        console.log(showFullNavShadow.value)
+    })
+})
 </script>
 
 <template>
@@ -12,7 +20,7 @@
                 <li>Contact</li>
             </ul>
         </nav>
-        <div class="mobile_menu">
+        <div class="mobile_menu" :class="{show_shadow: showFullNavShadow}">
             <div class="logo">
                 <img src="/images/bergen_routes_logo.svg" />
             </div>
@@ -25,7 +33,7 @@
 
 <style>
 header.menu_bar {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -76,6 +84,11 @@ header.menu_bar {
         justify-content: space-between;
         align-items: center;
         padding: 0 .25rem 0 1rem;
+        transition: box-shadow 200ms ease-in-out;
+        
+        &.show_shadow{
+            box-shadow: 0px 1px 4px 0px var(--g2);
+        }
 
         @media screen and (min-width: 1024px) {
             display: none;

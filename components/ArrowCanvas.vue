@@ -1,32 +1,45 @@
-<script setup>
+<script setup lang="ts">
 const page = ref()
 onMounted(async () => {
-    const { Application, Sprite, Assets } = await import('pixi.js')
-    const app = new Application({ width: 640, height: 360 });
+    const { Application, Sprite, Assets, Graphics } = await import('pixi.js')
+    const app = new Application({
+        resizeTo: window,
+        backgroundColor: 'lightgray'
+    })
     page.value.appendChild(app.view);
-    // load the texture we need
-    const texture = await Assets.load('/images/bergen_routes_logo.svg');
 
-    // This creates a texture from a 'bunny.png' image
-    const bunny = new Sprite(texture);
+    const arrowsCount = 20
+    const arrows = []
+    const arrowTexture = await Assets.load('/images/purple_arrow.svg')
+    for (let i = 0; i < arrowsCount; i++){
+        const arrow = new Sprite(arrowTexture)
+        arrow.anchor.set(.5, 0)
+        arrow.scale.set(0.8 + Math.random() * 0.3)
 
-    // Setup the position of the bunny
-    bunny.x = app.renderer.width / 2;
-    bunny.y = app.renderer.height / 2;
+        arrow.tint = generateRandomGrayHexColor();
+        
+        arrow.position.x = app.renderer.width * Math.random()
+        arrow.position.y = app.renderer.height * Math.random()
 
-    // Rotate around the center
-    bunny.anchor.x = 0.5;
-    bunny.anchor.y = 0.5;
-
-    // Add the bunny to the scene we are building
-    app.stage.addChild(bunny);
+        arrows.push(arrow)
+        app.stage.addChild(arrow);
+    }
+    
 
     // Listen for frame updates
     app.ticker.add(() => {
         // each frame we spin the bunny around a bit
-        bunny.rotation += 0.01;
     });
 })
+
+function generateRandomGrayHexColor() {
+  // Generate a random number between 0 and 255
+  const randomValue = Math.floor(Math.random() * 256);
+  // Convert the number to a hexadecimal string
+  const hexValue = randomValue.toString(16).padStart(2, '0');
+  // Concatenate the strings to form a hex color code
+  return `#${hexValue}${hexValue}${hexValue}`;
+}
 </script>
 
 <template>
@@ -35,6 +48,6 @@ onMounted(async () => {
 
 <style>
 .page{
-    height: 200%;
+    height: 2000px;
 }
 </style>
