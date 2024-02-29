@@ -4,6 +4,7 @@
 
 <template>
     <section class="story">
+        <h1>Our Story</h1>
         <div class="mobile">
             <div class="chapter">
                 <h1>How it Started</h1>
@@ -23,12 +24,25 @@
                     Emily Vandalovsky, Dean of STEM, as a mentor. The project quickly picked up popularity
                     and recruited a total of 13 developers.
                 </p>
-                <CarouselDevelopers/>
-                <!-- <img src="/images/br_team_frame.svg"> -->
+                <CarouselDevelopers />
                 <p>
-                    Over the course of its production our team tackled challenges such as implementing routing algorithms, managing and collecting data, and building a good UX.
+                    Over the course of its production our team tackled challenges such as implementing routing algorithms,
+                    managing and collecting data, and building a good UX.
                 </p>
-                <img src="/images/temp_media.svg">
+                <img src="/images/poster_framed.svg">
+            </div>
+            <div class="chapter">
+                <h1>What we Achieved</h1>
+                <p>
+                    Bergen Routes won first place in a poster competition, running against multiple computer science
+                    related projects. The project facilitated the development of a special set of tools and processes
+                    for managing 360 images. These tools could one day contribute to a more large scale project.
+                </p>
+                <CarouselCompetition />
+                <p>
+                    The original members of Bergen Routes have since graduated, the project itself has been
+                    rebranded and continues to be developed under the name [new brand].
+                </p>
             </div>
         </div>
     </section>
@@ -36,16 +50,26 @@
 
 <style>
 .stack>.story {
-    padding: 1rem;
+    padding: 0 1rem;
     color: var(--g4);
 
+    >h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--brand-purple);
+        text-align: center;
+        margin-top: 4rem;
+    }
+
     >.mobile {
-        display: flex;
+
+        /* display: flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 2rem; */
         >.chapter {
             max-width: 960px;
-            margin: 0 auto;
+            margin: 4rem auto;
 
             >img {
                 margin: 1rem auto;
@@ -59,12 +83,19 @@
                 font-weight: 300;
             }
         }
-        >.chapter:nth-child(1){
+
+        >.chapter:nth-child(1) {
             >img {
                 margin: 1rem auto;
-                width: 50%;
+                width: 30%;
+            }
+        }
+
+        >.chapter:nth-child(2) {
+            >img {
+                margin: 1rem auto;
+                width: 90%;
             }
         }
     }
-}
-</style>
+}</style>
