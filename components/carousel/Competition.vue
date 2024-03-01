@@ -4,10 +4,10 @@
 <template>
     <Carousel>
         <Slide :key=1>
-            <img class="carousel__item" src="/images/competition_reel/award.jpg">
+            <img class="carousel__item" src="/images/competition_reel/matt_competition.jpg">
         </Slide>
         <Slide :key=2>
-            <img class="carousel__item" src="/images/competition_reel/matt_competition.jpg">
+            <img class="carousel__item" src="/images/competition_reel/award.jpg">
         </Slide>
         <Slide :key=3>
             <img class="carousel__item" src="/images/competition_reel/ohad_competition.jpg">

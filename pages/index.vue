@@ -8,6 +8,7 @@
         <StackIntro />
         <StackAbout />
         <StackStory />
+        <StackTeam />
     </div>
 </template>
 

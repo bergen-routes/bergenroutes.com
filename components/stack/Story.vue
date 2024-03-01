@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
@@ -36,7 +36,7 @@
                 <p>
                     Bergen Routes won first place in a poster competition, running against multiple computer science
                     related projects. The project facilitated the development of a special set of tools and processes
-                    for managing 360 images. These tools could one day contribute to a more large scale project.
+                    for managing 360° images. These tools could one day contribute to a more large scale project.
                 </p>
                 <CarouselCompetition />
                 <p>
@@ -98,4 +98,5 @@
             }
         }
     }
-}</style>
+}
+</style>
