@@ -34,7 +34,7 @@
             <div class="chapter">
                 <h1>What we Achieved</h1>
                 <p>
-                    Bergen Routes won first place in a poster competition, running against multiple computer science
+                    Bergen Routes won first place in a poster competition running against multiple computer science
                     related projects. The project facilitated the development of a special set of tools and processes
                     for managing 360° images. These tools could one day contribute to a more large scale project.
                 </p>

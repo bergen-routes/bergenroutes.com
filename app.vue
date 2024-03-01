@@ -40,7 +40,7 @@ img {
 a {
     color: inherit;
     text-decoration: none;
-    -webkit-tap-highlight-color: #ffde0a22;
+    -webkit-tap-highlight-color: #d089ff22;
 
     &:visited {
         color: inherit;
