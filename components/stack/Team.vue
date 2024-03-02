@@ -52,7 +52,7 @@ const members = [
         url: "https://www.linkedin.com/in/ron-cohen-477376253/"
     }, {
         name: "Justin Diaz",
-        icon: "/images/team/justin_diaz.jpg",
+        icon: "/images/team/placeholder.jpg",
         title: "Photography",
         url: ""
     }, {

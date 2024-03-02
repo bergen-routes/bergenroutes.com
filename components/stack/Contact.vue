@@ -3,17 +3,23 @@ const showSuccess = ref(false)
 const error_msg = ref("")
 const isLoading = ref(false)
 
-setTimeout(()=>{
-    error_msg.value = "asfkhdsj"
-    isLoading.value = true
-}, 3000)
-
 async function submit(event) {
+    error_msg.value = false
+    isLoading.value = true
+
     const formElement = event.target
-    console.log(formElement)
     const formData = new FormData(formElement)
 
-    showSuccess.value = true
+    try {
+        await $fetch('/api/contact', {
+            method: 'POST',
+            body: formData
+        })
+        showSuccess.value = true
+    } catch {
+        error_msg.value = "Message failed to send!"
+        isLoading.value = false
+    }
 }
 
 </script>
@@ -38,24 +44,26 @@ async function submit(event) {
                         {{ error_msg }}
                     </span>
                 </div>
-                <button class="standard" type="submit" value="Send Message">
+                <button class="standard" type="submit" value="Send Message" :disabled="isLoading">
                     <span v-if="!isLoading">Send Message</span>
-                    <Icon v-else name="svg-spinners:3-dots-fade" size="1rem"/>
+                    <Icon v-else name="svg-spinners:3-dots-fade" size="1rem" />
                 </button>
             </div>
-            <div class="success" :style="{bottom: showSuccess ? '0%' : '-100%'}">
-                <h1>Message sent!</h1>
-                <Icon name="material-symbols-light:mark-email-read-outline-sharp" size="10rem" />
-                <p>You'll hear back from us soon!</p>
-            </div>
         </form>
+        <div class="success" :style="{ bottom: showSuccess ? '0%' : '-100%' }">
+            <h1>Message sent!</h1>
+            <Icon name="material-symbols-light:mark-email-read-outline-sharp" size="10rem" />
+            <p>You'll hear back from us soon!</p>
+        </div>
     </section>
 </template>
 
 <style>
 .stack>.contact {
+    position: relative;
     padding: 0 1rem 1rem;
     color: var(--g4);
+    overflow: hidden;
 
     form {
         position: relative;
@@ -125,35 +133,35 @@ async function submit(event) {
                 margin-left: auto;
             }
         }
+    }
 
-        >.success {
-            position: absolute;
-            bottom: -100%;
-            transition: bottom 500ms cubic-bezier(.23, .45, .61, 1);
-            left: 0px;
-            width: 100%;
-            height: 100%;
+    >.success {
+        position: absolute;
+        bottom: -100%;
+        transition: bottom 500ms cubic-bezier(.23, .45, .61, 1);
+        left: 0px;
+        width: 100%;
+        height: 100%;
 
-            background-color: white;
+        background-color: white;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-            >h1 {
-                font-weight: 700;
-                font-size: 3rem;
-                text-align: center;
-            }
+        >h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            text-align: center;
+        }
 
-            >img {
-                margin: 20px;
-            }
+        >img {
+            margin: 20px;
+        }
 
-            >p {
-                font-size: 1.2rem;
-            }
+        >p {
+            font-size: 1.2rem;
         }
     }
 }

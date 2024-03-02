@@ -44,10 +44,13 @@
             }
 
             >h1 {
-                margin: 1rem 0 1.5rem 0;
-                padding: 0 0 .25rem 0;
-                border-bottom: 1px solid var(--g4);
+                margin: 1rem 0 .5rem 0;
+                padding: 0;
                 font-weight: 300;
+            }
+
+            >p{
+                margin: .5rem 0;
             }
         }
 

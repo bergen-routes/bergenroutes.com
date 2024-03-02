@@ -26,3 +26,8 @@ Initial proposal will show give a brief description of the applications inceptio
 Production will showcase the team giving presentations and such.
 Accolades will show a scan of the Bergen Routes poster competition award.
 
+## 02-29-24 00
+The footer should have the following:
+- Sponsors and logos
+- Github link to website source code
+

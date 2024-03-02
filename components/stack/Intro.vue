@@ -2,7 +2,10 @@
 const intro = ref()
 
 onMounted(() => {
-    intro.value.style.height = window.innerHeight + "px"
+    window.addEventListener('resize', () => {
+        intro.value.style.height = window.innerHeight + "px"
+    })
+    window.dispatchEvent(new Event('resize'))
 })
 </script>
 
