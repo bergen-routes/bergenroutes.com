@@ -5,7 +5,6 @@
     <footer>
         <div class="logos">
             <img src="/images/program_logos.png">
-            <img src="/images/STEMatics_logo.png">
         </div>
         <a class="source" href="https://github.com/bergen-routes/bergenroutes.com">
             <span>Like this site?</span>

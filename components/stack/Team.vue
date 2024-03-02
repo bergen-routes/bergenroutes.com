@@ -37,7 +37,7 @@ const members = [
         url: "https://www.linkedin.com/in/olivercruz1/"
     }, {
         name: "Karla Santamaria",
-        icon: "/images/team/placeholder.jpg",
+        icon: "/images/team/karla_santamaria.jpg",
         title: "Front End Developer",
         url: "https://www.linkedin.com/in/karla-santamaria-698b29242/"
     }, {

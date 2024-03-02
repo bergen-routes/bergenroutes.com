@@ -1,4 +1,12 @@
 <script setup>
+/**
+ * Move expandable image viewer button to new component
+ */
+
+const brPosterImageviewer = ref()
+function openBRPosterImageviewer() {
+    brPosterImageviewer.value?.open()
+}
 
 </script>
 
@@ -26,10 +34,15 @@
                 </p>
                 <CarouselDevelopers />
                 <p>
-                    Over the course of its production our team tackled challenges such as implementing routing algorithms,
+                    Over the course of production our team tackled challenges such as implementing routing algorithms,
                     managing and collecting data, and building a good UX.
                 </p>
-                <img src="/images/poster_framed.svg">
+                <div class="expandable_image" @click="openBRPosterImageviewer">
+                    <button>
+                        <Icon name="tabler:zoom-in" size="1.5rem" color="var(--g4)" />
+                    </button>
+                    <img src="/images/br_poster.png">
+                </div>
             </div>
             <div class="chapter">
                 <h1>What we Achieved</h1>
@@ -78,26 +91,16 @@
                             Emily Vandalovsky, Dean of STEM, as a mentor. The project quickly picked up popularity
                             and recruited a total of 13 developers.
                         </p>
-                    </div>
-                </div>
-                <div class="cm">
-                    <div class="caption">
                         <p>
                             Over the course of its production our team tackled challenges such as implementing routing
                             algorithms,
                             managing and collecting data, and building a good user experience.
                         </p>
                     </div>
-                    <div class="media">
-                        <img src="/images/poster_framed.svg">
-                    </div>
                 </div>
             </div>
             <div class="chapter">
-                <div class="mc">
-                    <div class="media">
-                        <CarouselCompetition />
-                    </div>
+                <div class="cm">
                     <div class="caption">
                         <h1>What we Achieved</h1>
                         <p>
@@ -111,10 +114,20 @@
                             rebranded and continues to be developed under the name [new brand].
                         </p>
                     </div>
+                    <div class="media">
+                        <CarouselCompetition />
+                    </div>
+                </div>
+                <div class="expandable_image" @click="openBRPosterImageviewer">
+                    <button>
+                        <Icon name="tabler:zoom-in" size="1.5rem" color="var(--g4)" />
+                    </button>
+                    <img src="/images/br_poster.png">
                 </div>
             </div>
         </div>
     </section>
+    <ImageViewer src="/images/br_poster.png" ref="brPosterImageviewer" />
 </template>
 
 <style>
@@ -131,7 +144,7 @@
         margin-top: 4rem;
     }
 
-    p{
+    p {
         margin: 0.5rem 0;
     }
 
@@ -145,6 +158,30 @@
         }
     }
 
+    .expandable_image {
+        position: relative;
+        cursor: pointer;
+
+        >button {
+            background-color: var(--g1);
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            transform: translate(20%, 20%);
+            border: none;
+            border-radius: 50%;
+            padding: .75rem;
+            box-shadow: 0px 1px 2px 0px lightgray;
+            cursor: pointer;
+        }
+
+        >img {
+            width: 100%;
+            border-radius: .5rem;
+            box-shadow: 0px 1px 4px 0px lightgray;
+        }
+    }
+
     >.mobile {
 
         /* display: flex;
@@ -154,8 +191,8 @@
             max-width: 960px;
             margin: 4rem auto;
 
-            >img {
-                margin: 1rem auto;
+            >img, >.carousel {
+                margin: 2rem auto;
                 width: 100%;
             }
 
@@ -163,6 +200,11 @@
                 margin: 1rem 0 .5rem 0;
                 padding: 0;
                 font-weight: 300;
+            }
+
+            >.expandable_image{
+                margin: 2rem auto;
+                width: 90%;
             }
         }
 
@@ -183,10 +225,10 @@
     }
 
     >.desktop {
-
+        display: none;
         >.chapter {
             max-width: 960px;
-            margin: 4rem auto;
+            margin: 6rem auto;
 
             >.mc {
                 display: grid;
@@ -202,6 +244,12 @@
                 align-items: center;
                 gap: 6rem;
                 margin: 4rem auto;
+            }
+
+            .expandable_image {
+                width: 90%;
+                max-width: 460px;
+                margin: 1rem auto;
             }
 
             >div {
@@ -232,6 +280,25 @@
                 img {
                     margin: 1rem auto;
                     width: 60% !important;
+                }
+
+                >.cm {
+                    grid-template-columns: 5fr 3fr;
+                    gap: 2rem;
+                }
+            }
+
+            &:nth-child(2) {
+                >.mc {
+                    grid-template-columns: 4fr 5fr;
+                    gap: 6rem;
+                }
+            }
+
+            &:nth-child(3) {
+                >.cm {
+                    grid-template-columns: 5fr 4fr;
+                    gap: 6rem;
                 }
             }
         }
