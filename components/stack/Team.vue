@@ -115,10 +115,16 @@ const members = [
 
             @media screen and (min-width: 500px) {
                 grid-template-columns: 1fr 1fr;
+                >li:last-child{
+                    grid-column: 1/3;
+                }
             }
 
             @media screen and (min-width: 800px) {
                 grid-template-columns: 1fr 1fr 1fr;
+                >li:last-child{
+                    grid-column: 2;
+                }
             }
 
             >li>a {

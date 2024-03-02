@@ -3,13 +3,15 @@
 </script>
 
 <template>
-    <MenuBar />
-    <div class="stack">
-        <StackIntro />
-        <StackAbout />
-        <StackStory />
-        <StackTeam />
-    </div>
+  <MenuBar />
+  <div class="stack">
+    <StackIntro />
+    <StackAbout />
+    <StackStory />
+    <StackTeam />
+    <StackContact />
+  </div>
+  <FooterBar />
 </template>
 
 <style>
