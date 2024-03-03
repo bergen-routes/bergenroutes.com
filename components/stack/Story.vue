@@ -11,8 +11,8 @@ function openBRPosterImageviewer() {
 </script>
 
 <template>
-    <section class="story">
-        <h1>Our Story</h1>
+    <section id="journey" class="story">
+        <h1>Our Journey</h1>
         <div class="mobile">
             <div class="chapter">
                 <h1>How it Started</h1>
@@ -150,11 +150,11 @@ function openBRPosterImageviewer() {
 
     @media screen and (min-width: 1024px) {
         >.mobile {
-            display: none;
+            display: none !important;
         }
 
         >.desktop {
-            display: block;
+            display: block !important;
         }
     }
 

@@ -70,7 +70,7 @@ const members = [
 </script>
 
 <template>
-    <section class="team">
+    <section id="team" class="team">
         <div class="content_wrapper">
             <h1>Our Team</h1>
             <ul class="cards">

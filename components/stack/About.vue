@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="about">
+    <section id="about" class="about">
         <div class="content_wrapper">
             <div class="caption">
                 <h1>Future of Wayfinding</h1>
