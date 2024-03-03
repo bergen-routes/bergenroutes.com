@@ -7,7 +7,10 @@
         <div class="content_wrapper">
             <div class="caption">
                 <h1>Future of Wayfinding</h1>
-                <img src="/images/temp_media.svg">
+                <!-- <img src="/images/thumbnail_alt.svg"> -->
+                <iframe src="https://www.youtube.com/embed/1EK-AlE1HBM" title="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 <p>
                     In the age of portable electronics, the use of maps and directories have become defunct.
                     Bergen Routes is a web based application designed to assist users in navigating large buildings.
@@ -18,7 +21,10 @@
                 </p>
             </div>
             <div class="desktop_media">
-                <img src="/images/temp_media.svg">
+                <!-- <img src="/images/thumbnail_alt.svg"> -->
+                <iframe src="https://www.youtube.com/embed/1EK-AlE1HBM" title="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -37,10 +43,14 @@
         margin: 0 auto;
 
         >.caption {
-            >img {
+
+            >img,
+            >iframe {
                 margin: 1rem auto;
                 width: 90%;
                 max-width: 460px;
+                aspect-ratio: 4 / 3;
+                display: block;
             }
 
             >h1 {
@@ -49,7 +59,7 @@
                 font-weight: 300;
             }
 
-            >p{
+            >p {
                 margin: .5rem 0;
             }
         }
@@ -67,7 +77,9 @@
             margin: 8rem auto;
 
             >.caption {
-                >img {
+
+                >img,
+                >iframe {
                     display: none;
                 }
 
@@ -83,8 +95,10 @@
             >.desktop_media {
                 display: block;
 
-                >img {
+                >img,
+                >iframe {
                     width: 100%;
+                    aspect-ratio: 4 / 3;
                 }
             }
         }
