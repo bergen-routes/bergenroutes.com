@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const intro = ref()
 
 onMounted(() => {
@@ -7,6 +7,16 @@ onMounted(() => {
     })
     window.dispatchEvent(new Event('resize'))
 })
+
+async function scrollToAbout() {
+    const about = document.getElementById('about');
+    // window.location.href = "#about"
+    const offsetTop = about.offsetTop - 100
+    window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+    })
+}
 </script>
 
 <template>
@@ -16,10 +26,10 @@ onMounted(() => {
             <span>Find Your Way</span>
         </h1>
         <div class="button_wrapper">
-            <button class="standard try_demo">
+            <button class="standard try_demo" style="display:none;">
                 Try Demo
             </button>
-            <button class="standard learn_more">
+            <button class="standard learn_more" @click="scrollToAbout">
                 <span>Learn More</span>
                 <Icon name="material-symbols:arrow-downward-rounded" color="#404040" size="1rem" />
             </button>

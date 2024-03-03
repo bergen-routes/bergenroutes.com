@@ -4,10 +4,6 @@ const img = ref()
 const clipframe = ref()
 const imageviewer = ref()
 
-onMounted(() => {
-    console.log(img.value.naturalHeight)
-})
-
 async function open() {
     imageviewer.value.style['transition-delay'] = "0ms";
     clipframe.value.style['transition-delay'] = "200ms";
