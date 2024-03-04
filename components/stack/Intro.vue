@@ -69,12 +69,14 @@ async function scrollToAbout() {
 
     &>.button_wrapper {
         display: grid;
-        grid-template-rows: min-content min-content;
+        /* grid-template-rows: min-content min-content; */
+        grid-template-rows: min-content;
         grid-template-columns: none;
         gap: 1rem;
 
         @media screen and (min-width: 1024px) {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+            grid-template-columns: minmax(0, 1fr);
             grid-template-rows: none;
         }
 

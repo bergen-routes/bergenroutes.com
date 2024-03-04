@@ -2,6 +2,24 @@
 </script>
 
 <template>
+    <Head>
+        <Title>Bergen Routes Wayfinding Application - Find Your Way</Title>
+        <Meta name="title" content="Bergen Routes Wayfinding Application - Find Your Way" />
+        <Meta name="description"
+            content="Wayfinding App Bergen Community College 3SP (STEM Student Scholar Program) internship project. Helps people find their way around large buildings." />
+        <Meta name="keywords" content="Bergen Routes, 3SP, STEM Student Scholar Program, Bergen Community College" />
+        <Meta name="robots" content="index, follow" />
+        <Meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <Meta name="language" content="English" />
+
+        <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <Link rel="manifest" href="/site.webmanifest" />
+        <Link rel="mask-icon" href="/safari-pinned-tab.svg" color="#663399" />
+        <Meta name="msapplication-TileColor" content="#603cba" />
+        <Meta name="theme-color" content="#ffffff" />
+    </Head>
     <NuxtPage />
 </template>
 

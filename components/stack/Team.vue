@@ -21,6 +21,11 @@ const members = [
         title: "UI / UX, Branding, & IT",
         url: "https://www.linkedin.com/in/petroski/"
     }, {
+        name: "Oliver Cruz",
+        icon: "/images/team/oliver_cruz.jpg",
+        title: "Database Engineer",
+        url: "https://www.linkedin.com/in/olivercruz1/"
+    }, {
         name: "Jacob Jalinski",
         icon: "/images/team/jacob_jalinski.jpg",
         title: "Software Engineer",
@@ -30,11 +35,6 @@ const members = [
         icon: "/images/team/jace_zito.jpg",
         title: "Front-End Developer & Technical Writer",
         url: "https://www.linkedin.com/in/jace-zito-2a789938/"
-    }, {
-        name: "Oliver Cruz",
-        icon: "/images/team/placeholder.jpg",
-        title: "Database Engineer",
-        url: "https://www.linkedin.com/in/olivercruz1/"
     }, {
         name: "Karla Santamaria",
         icon: "/images/team/karla_santamaria.jpg",
