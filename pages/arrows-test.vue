@@ -2,8 +2,13 @@
 </script>
 
 <template>
-    <ArrowCanvas/>
+    <div ref="page" class="page">
+        <ArrowBackdrop/>
+    </div>
 </template>
 
 <style>
+.page {
+    height: 2000px;
+}
 </style>

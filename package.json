@@ -10,10 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "nodemailer": "^6.9.11",
     "nuxt": "^3.10.3",
     "photoswipe": "^5.4.3",
     "pixi.js": "^8.0.0",
+    "vector2js": "^2.0.1",
     "victor": "^1.1.0",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.1.3",
     "@types/nodemailer": "^6.4.14",
+    "@types/vector2js": "^2.0.2",
     "@types/victor": "^1.1.5",
     "nuxt-icon": "^0.6.8"
   }

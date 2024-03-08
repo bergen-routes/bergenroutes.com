@@ -2,21 +2,47 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="19.999975"
-   height="1659.5312"
-   viewBox="0 0 5.29166 439.0843"
+   width="80.000015"
+   height="6399.9995"
+   viewBox="0 0 21.166671 1693.3332"
    version="1.1"
    id="svg5390"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="purple_arrow.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5392"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="13.455443"
+     inkscape:cx="6.5401041"
+     inkscape:cy="15.532747"
+     inkscape:window-width="2240"
+     inkscape:window-height="1320"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
   <defs
      id="defs5387" />
   <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-102.35396,-42.14213)">
+     transform="translate(-102.35396,-42.142129)">
     <path
        id="rect5926"
-       style="fill:#663399;fill-opacity:1;stroke-width:0.79375"
-       d="M 104.99979 42.14213 L 102.35396 46.724796 L 104.01846 46.724796 L 104.01846 465.47545 L 106.13512 465.47545 L 106.13512 46.724796 L 107.64563 46.724796 L 104.99979 42.14213 z " />
+       style="fill:#ad84d6;fill-opacity:1;stroke-width:0.793748"
+       d="m 112.93728,42.142129 -10.58332,18.330663 h 6.65799 V 1735.4753 h 8.46665 V 60.472792 h 6.04203 z" />
   </g>
 </svg>

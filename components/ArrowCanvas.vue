@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { ObservablePoint, Point, type PointLike } from 'pixi.js';
-import Victor from 'victor';
+import Victor from 'victor'
+
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { PixiPlugin } from "gsap/PixiPlugin";
+
+PixiPlugin.registerPIXI(await import('pixi.js'))
+
+gsap.registerPlugin(ScrollTrigger, PixiPlugin);
 
 const container = ref()
 const page = ref()
@@ -11,50 +20,83 @@ onMounted(async () => {
     })
     window.dispatchEvent(new Event('resize'))
 
-    const { Application, Sprite, Assets, Graphics, Point } = await import('pixi.js')
+    const { Application, Sprite, Assets, Graphics, BlurFilter } = await import('pixi.js')
     const app = new Application();
     await app.init({
         resizeTo: container.value,
-        backgroundColor: 'lightgray'
+        backgroundColor: 'white',
+        autoDensity: true,
+        resolution: 2
     })
     container.value.appendChild(app.canvas);
+    
+    const blurFilter = new BlurFilter();
+    blurFilter.blur = 3
 
+    const center = new Victor(container.value.offsetWidth, container.value.offsetHeight).divideScalar(2)
 
-    // const arrowsCount = 20
-    // const arrows = []
-    // const arrowTexture = await Assets.load('/images/purple_arrow.svg')
-    // for (let i = 0; i < arrowsCount; i++) {
-    //     const arrow = new Sprite(arrowTexture)
-    //     arrow.anchor.set(.5, 0)
-    //     arrow.scale.set(0.8 + Math.random() * 0.3)
+    let graphics = new Graphics()
+    graphics.rect(0, 0, container.value.offsetWidth, container.value.offsetHeight)
+    graphics.stroke({ color: 'red' })
 
-    //     arrow.tint = generateRandomGrayHexColor();
+    graphics.circle(center.x, center.y, 20)
+    graphics.stroke({ color: 'red' })
 
-    //     arrow.position.x = app.renderer.width * Math.random()
-    //     arrow.position.y = app.renderer.height * Math.random()
+    app.stage.addChild(graphics);
 
-    //     arrows.push(arrow)
-    //     app.stage.addChild(arrow);
-    // }
+    const arrowsCount = 30
+    const arrows = []
 
-    const pointCount = 500
-    for (let i = 0; i < pointCount; i++) {
-        let graphics = new Graphics()
+    const arrowTexture = await Assets.load('/images/purple_arrow.svg')
+    for (let i = 0; i < arrowsCount; i++) {
         let point = randomPointOnFrame(container.value.offsetWidth, container.value.offsetHeight)
-        console.log(point)
-        graphics.circle(point.x, point.y, 2)
-        graphics.fill('red')
-        let projection = graphics.position.project(new Point(container.value.offsetWidth / 2, container.value.offsetHeight / 2))
-        graphics.circle(projection.x, projection.y, 3)
-        graphics.fill('black')
+        let randomZMultiplier = Math.random()
 
-        app.stage.addChild(graphics);
+        const arrow = new Sprite({
+            texture: arrowTexture,
+
+        })
+        arrow.anchor.set(.5, 0)
+
+        arrow.scale.set(.5 + randomZMultiplier * 1.5)
+
+        arrow.zIndex = randomZMultiplier
+
+        arrow.tint = lerpGrayscaleHexColor(.75 + (randomZMultiplier * .25));
+
+        let reference = point.clone().subtract(center)
+        let normalized = reference.clone().normalize()
+
+        arrow.rotation = reference.direction() - (Math.PI / 2) + (Math.PI * Math.random() * .2)
+        let xNormal = Math.cos(arrow.rotation + (Math.PI / 2))
+        let yNormal = Math.sin(arrow.rotation + (Math.PI / 2))
+
+        let offsetMagnitude = Math.random()
+        // arrow.position.x = point.x - (10 * xNormal) - (xNormal * offsetMagnitude * 300)
+        // arrow.position.y = point.y - (10 * yNormal) - (yNormal * offsetMagnitude * 300)
+        arrow.position.x = point.x
+        arrow.position.y = point.y
+
+        arrows.push(arrow)
+        app.stage.addChild(arrow);
+
+        gsap.to(arrow, {
+            pixi: {
+                positionX: point.x - (10 * xNormal) - (xNormal * offsetMagnitude * 1200),
+                positionY: point.y - (10 * yNormal) - (yNormal * offsetMagnitude * 1200)
+            },
+            scrollTrigger: {
+                start: 0,
+                end: container.value.offsetHeight,
+                scrub: .5
+            }
+        })
     }
 
-    // Listen for frame updates
-    app.ticker.add(() => {
-        // each frame we spin the bunny around a bit
-    });
+    // app.stage.scale = .5
+    // app.stage.position.x = container.value.offsetWidth / 4
+    // app.stage.position.y = container.value.offsetHeight / 4
+    // app.stage.filters = blurFilter
 
     function randomPointOnFrame(frameWidth: number, frameHeight: number) {
         var res: Victor
@@ -80,6 +122,12 @@ function generateRandomGrayHexColor() {
     const hexValue = randomValue.toString(16).padStart(2, '0');
     // Concatenate the strings to form a hex color code
     return `#${hexValue}${hexValue}${hexValue}`;
+}
+
+function lerpGrayscaleHexColor(v: number) {
+    let value = Math.floor(v *= 256)
+    const hexValue = value.toString(16).padStart(2, '0')
+    return `#${hexValue}${hexValue}${hexValue}`
 }
 
 </script>
