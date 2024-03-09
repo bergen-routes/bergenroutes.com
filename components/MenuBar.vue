@@ -1,11 +1,21 @@
 <script setup lang="ts">
-const showFullNavShadow = ref(false)
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+const mobile_menu = ref()
 const mobile_nav = ref()
 const nav_shadow = ref()
 
 onMounted(() => {
-    window.addEventListener('scroll', () => {
-        showFullNavShadow.value = window.scrollY > 10
+    gsap.to(mobile_menu.value, {
+        boxShadow: '0px 1px 4px 0px rgba(237, 237, 237, 1)',
+        background: '#ffffffff',
+        scrollTrigger: {
+            start: 0,
+            end: window.innerHeight,
+            scrub: .1
+        }
     })
 })
 
@@ -45,7 +55,7 @@ async function close() {
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="mobile_menu" :class="{ show_shadow: showFullNavShadow }">
+        <div class="mobile_menu" ref="mobile_menu">
             <a href="/" class="logo">
                 <img src="/images/bergen_routes_logo.svg" />
             </a>
@@ -128,12 +138,8 @@ header.menu_bar {
         justify-content: space-between;
         align-items: center;
         padding: 0 .25rem 0 1rem;
-        transition: box-shadow 200ms ease-in-out;
-        background-color: white;
-
-        &.show_shadow {
-            box-shadow: 0px 1px 4px 0px var(--g2);
-        }
+        background-color: #ffffff00;
+        box-shadow: 0px 1px 4px 0px rgba(237, 237, 237, 0);
 
         @media screen and (min-width: 1024px) {
             display: none;
