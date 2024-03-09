@@ -2,10 +2,7 @@
 const intro = ref()
 
 onMounted(() => {
-    window.addEventListener('resize', () => {
-        intro.value.style.height = window.innerHeight + "px"
-    })
-    window.dispatchEvent(new Event('resize'))
+    intro.value.style.height = window.innerHeight + "px"
 })
 
 async function scrollToAbout() {
