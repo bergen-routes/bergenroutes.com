@@ -92,7 +92,7 @@ async function drawView() {
     const arrowTexture = await Assets.load('/images/purple_arrow.svg')
     let arrowContainer = new Container({ label: "arrows" })
 
-    const arrowsCount = 30
+    const arrowsCount = 40
     const arrows = []
 
     for (let i = 0; i < arrowsCount; i++) {
@@ -105,21 +105,21 @@ async function drawView() {
         })
         arrow.anchor.set(.5, 0)
 
-        let parallaxSkew = (1.3 - randomZMultiplier) * 300
+        let parallaxSkew = (1.3 - randomZMultiplier) * 400
 
         arrow.scale.set(.5 + randomZMultiplier * (frameWidth/1466))
 
         arrow.zIndex = randomZMultiplier
 
-        arrow.tint = lerpGrayscaleHexColor(.75 + ((1 - randomZMultiplier) * .25));
+        arrow.tint = lerpGrayscaleHexColor(.9 + ((1 - randomZMultiplier) * .1));
 
         let reference = point.clone().subtract(center)
 
-        arrow.rotation = reference.direction() - (Math.PI / 2) + (Math.PI * (.1 + (Math.random() * .15)))
+        arrow.rotation = reference.direction() - (Math.PI / 2) + (Math.PI * (.05 + (Math.random() * .15)))
         let xNormal = Math.cos(arrow.rotation + (Math.PI / 2))
         let yNormal = Math.sin(arrow.rotation + (Math.PI / 2))
 
-        let offsetMagnitude = Math.random()
+        let offsetMagnitude = .2 + (Math.random() * .8)
         arrow.position.x = point.x
         arrow.position.y = point.y
 
@@ -129,20 +129,20 @@ async function drawView() {
         let tl = gsap.timeline()
         tl.fromTo(arrow, {
             pixi: {
-                positionX: point.x + (50 * xNormal),
-                positionY: point.y + (50 * yNormal)
+                positionX: point.x + (xNormal * offsetMagnitude * 600),
+                positionY: point.y + (yNormal * offsetMagnitude * 600)
             }
         }, {
             pixi: {
-                positionX: point.x - (xNormal * offsetMagnitude * 300),
-                positionY: point.y - (yNormal * offsetMagnitude * 300)
+                positionX: point.x - (xNormal * offsetMagnitude * 150),
+                positionY: point.y - (yNormal * offsetMagnitude * 150)
             },
-            duration: 1
+            duration: 1.5
         })
         tl.fromTo(arrow, {
             pixi: {
-                positionX: point.x - (xNormal * offsetMagnitude * 300),
-                positionY: point.y - (yNormal * offsetMagnitude * 300)
+                positionX: point.x - (xNormal * offsetMagnitude * 150),
+                positionY: point.y - (yNormal * offsetMagnitude * 150)
             }
         }, {
             pixi: {
