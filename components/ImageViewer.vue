@@ -1,29 +1,66 @@
 <script setup>
+import { gsap } from "gsap";
+
 const props = defineProps(['src'])
-const img = ref()
-const clipframe = ref()
 const imageviewer = ref()
+var mainImg = null
+
+const tl = gsap.timeline({
+    paused: true
+})
+
+onMounted(() => {
+    mainImg = imageviewer.value.querySelector('img.main')
+
+    if (mainImg.naturalWidth > mainImg.naturalHeight) {
+        mainImg.style.width = '100%'
+    } else {
+        mainImg.style.height = '100%'
+    }
+
+    tl.fromTo(imageviewer.value, {
+        display: 'none'
+    }, {
+        display: 'flex',
+        duration: 0
+    })
+    tl.fromTo(imageviewer.value, {
+        opacity: 0
+    }, {
+        opacity: 1,
+        duration: .2
+    })
+    tl.fromTo(mainImg, {
+        translateY: window.innerHeight + 'px'
+    }, {
+        translateY: '0px',
+        duration: .2,
+        ease: 'power1.out'
+    }, ">-0.05")
+    tl.addPause(">")
+    tl.to(mainImg, {
+        translateY: window.innerHeight + 'px',
+        duration: .2,
+        ease: 'power1.in'
+    })
+    tl.to(imageviewer.value, {
+        opacity: 0,
+        duration: .3
+    })
+    tl.to(imageviewer.value, {
+        display: 'none',
+        duration: 0
+    })
+
+    tl.seek(0)
+})
 
 async function open() {
-    imageviewer.value.style['transition-delay'] = "0ms";
-    clipframe.value.style['transition-delay'] = "200ms";
-
-    imageviewer.value.style.display = "block"
-    setTimeout(() => {
-        imageviewer.value.style.opacity = 1;
-        clipframe.value.style.transform = "translateY(0%)"
-    }, 100)
+    tl.restart()
 }
 
 async function close() {
-    imageviewer.value.style['transition-delay'] = "300ms";
-    clipframe.value.style['transition-delay'] = "0ms";
-
-    imageviewer.value.style.opacity = 0;
-    clipframe.value.style.transform = "translateY(200%)"
-    setTimeout(() => {
-        imageviewer.value.style.display = "none"
-    }, 800)
+    tl.play()
 }
 
 defineExpose({ open, close })
@@ -32,9 +69,7 @@ defineExpose({ open, close })
 <template>
     <div class="imageviewer" ref="imageviewer">
         <div class="shadow" @click="close"></div>
-        <div class="clipframe" ref="clipframe">
-            <img :src="src" ref="img">
-        </div>
+        <NuxtImg :src="src" class="main" />
         <button @click="close">
             <Icon name="material-symbols-light:close" size="3rem" color="black" />
         </button>
@@ -49,11 +84,11 @@ defineExpose({ open, close })
     left: 0px;
     right: 0px;
     padding: 3rem;
-    z-index: 1;
+    z-index: 10;
     opacity: 0;
     display: none;
-    transition: opacity 500ms;
-    transition-delay: 300ms;
+    justify-content: center;
+    align-items: center;
 
     >.shadow {
         background-color: rgba(0, 0, 0, 0.5);
@@ -65,22 +100,12 @@ defineExpose({ open, close })
         right: 0px;
     }
 
-    @media screen and (max-width: 800px) {
-        padding: 3rem 1rem;
+    >img.main {
+        margin: auto;
     }
 
-    >.clipframe {
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        transition: transform 500ms;
-        transform: translateY(200%);
-
-        >img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    @media screen and (max-width: 800px) {
+        padding: 3rem 1rem;
     }
 
     >button {

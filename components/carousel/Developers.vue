@@ -4,22 +4,22 @@
 <template>
     <Carousel>
         <Slide :key=1>
-            <img class="carousel__item" src="/images/team_reel/br_team_all.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/br_team_all.jpg" />
         </Slide>
         <Slide :key=2>
-            <img class="carousel__item" src="/images/team_reel/lisa_presentation.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/lisa_presentation.jpg" />
         </Slide>
         <Slide :key=3>
-            <img class="carousel__item" src="/images/team_reel/agraw_presentation.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/agraw_presentation.jpg" />
         </Slide>
         <Slide :key=4>
-            <img class="carousel__item" src="/images/team_reel/petar_presentation.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/petar_presentation.jpg" />
         </Slide>
         <Slide :key=5>
-            <img class="carousel__item" src="/images/team_reel/lisa_presentation_2.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/lisa_presentation_2.jpg" />
         </Slide>
         <Slide :key=6>
-            <img class="carousel__item" src="/images/team_reel/br_team_1.jpg">
+            <NuxtImg class="carousel__item" src="/images/team_reel/br_team_1.jpg" />
         </Slide>
 
         <template #addons>

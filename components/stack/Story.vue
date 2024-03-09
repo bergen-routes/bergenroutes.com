@@ -23,7 +23,7 @@ function openBRPosterImageviewer() {
                     campus. Soon Bergen Routes became an official project supported by the STEM Student Scholar Program.
                     This provided the team with critical funds, sourced via federal grants.
                 </p>
-                <img src="/images/computer_tech_club_logo.png">
+                <NuxtImg src="/images/computer_tech_club_logo.png" />
             </div>
             <div class="chapter">
                 <h1>The Internship</h1>
@@ -41,7 +41,7 @@ function openBRPosterImageviewer() {
                     <button>
                         <Icon name="tabler:zoom-in" size="1.5rem" color="var(--g4)" />
                     </button>
-                    <img src="/images/br_poster.png">
+                    <NuxtImg src="/images/br_poster.png" />
                 </div>
             </div>
             <div class="chapter">
@@ -75,7 +75,7 @@ function openBRPosterImageviewer() {
                         </p>
                     </div>
                     <div class="media">
-                        <img src="/images/computer_tech_club_logo.png">
+                        <NuxtImg src="/images/computer_tech_club_logo.png" />
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ function openBRPosterImageviewer() {
                     <button>
                         <Icon name="tabler:zoom-in" size="1.5rem" color="var(--g4)" />
                     </button>
-                    <img src="/images/br_poster.png">
+                    <NuxtImg src="/images/br_poster.png" />
                 </div>
             </div>
         </div>

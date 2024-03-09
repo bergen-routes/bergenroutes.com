@@ -85,7 +85,7 @@ header.menu_bar {
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 10;
+    z-index: 2;
 
     >.full_nav {
         display: none;

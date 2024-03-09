@@ -46,17 +46,17 @@ async function init() {
 }
 
 const skewLevels = [
+    600,
+    500,
     400,
-    300,
-    200,
-    100,
+    300
 ]
 
 const tintLevels = [
-    '#FBFBFB',
-    '#F5F5F5',
-    '#F2F2F2',
-    '#E7E7E7'
+    '#faf9fa',
+    '#f5f3f6',
+    '#f1ecf3',
+    '#e6e0eb'
 ]
 
 const scaleLevels = [
@@ -154,7 +154,7 @@ async function drawView() {
             scrollTrigger: {
                 start: 0,
                 end: container.value.offsetHeight,
-                scrub: .5
+                scrub: true
             }
         })
         // tl.to(arrow, {
