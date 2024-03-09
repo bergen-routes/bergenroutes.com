@@ -109,7 +109,7 @@ async function drawView() {
 
         let parallaxSkew = skewLevels[randomZIndex]
 
-        arrow.scale.set(scaleLevels[randomZIndex])
+        arrow.scale.set(scaleLevels[randomZIndex] * (.75 + (frameWidth * .25 / 2200)))
 
         arrow.zIndex = randomZIndex
 
