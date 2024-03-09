@@ -34,8 +34,8 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
 
-    background-color: #ffffff75;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 84%, rgba(255,255,255,1) 100%);
+    /* background-color: #ffffff75; */
+    /* background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 84%, rgba(255,255,255,1) 100%); */
 
     h1 {
         margin:0 auto;

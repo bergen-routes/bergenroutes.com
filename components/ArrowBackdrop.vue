@@ -16,35 +16,16 @@ const container = ref()
 /** Height multiplier used for verticle scrolling parallax effect. */
 const parallaxScale = 1.5
 
-function onWindowResize() {
+function resizeToWindow() {
     let totalHeight = window.innerHeight * parallaxScale
     container.value.style.height = totalHeight + "px"
 
     drawView()
 }
 
-/** Returns method which executes onWindowResize() if a second has past since last execution. */
-function createWindowResizeHandler() {
-    let timeoutID: NodeJS.Timeout | null = null
-
-    return function () {
-        let timeout = 1000
-        if (timeoutID) {
-            clearTimeout(timeoutID)
-        } else {
-            timeout = 0
-        }
-
-        timeoutID = setTimeout(() => {
-            onWindowResize()
-        }, timeout);
-    }
-}
-
 onMounted(async () => {
-    window.addEventListener('resize', createWindowResizeHandler())
     await init()
-    window.dispatchEvent(new Event('resize'))
+    resizeToWindow()
 })
 
 const app = new Application()
@@ -59,10 +40,31 @@ async function init() {
     })
     container.value.appendChild(app.canvas)
 
-    // const blurFilter = new BlurFilter();
-    // blurFilter.blur = 3
-    // app.stage.filters = blurFilter
+    const blurFilter = new BlurFilter();
+    blurFilter.blur = 3
+    app.stage.filters = blurFilter
 }
+
+const skewLevels = [
+    400,
+    300,
+    200,
+    100,
+]
+
+const tintLevels = [
+    '#FBFBFB',
+    '#F5F5F5',
+    '#F2F2F2',
+    '#E7E7E7'
+]
+
+const scaleLevels = [
+    2,
+    2.5,
+    4,
+    6
+]
 
 async function drawView() {
     app.resize()
@@ -92,12 +94,12 @@ async function drawView() {
     const arrowTexture = await Assets.load('/images/purple_arrow.svg')
     let arrowContainer = new Container({ label: "arrows" })
 
-    const arrowsCount = 40
+    const arrowsCount = 20
     const arrows = []
 
     for (let i = 0; i < arrowsCount; i++) {
         let point = randomPointOnFrame(frameWidth, frameHeight)
-        let randomZMultiplier = Math.random()
+        let randomZIndex = Math.round(Math.random() * 4)
 
         const arrow = new Sprite({
             texture: arrowTexture,
@@ -105,13 +107,13 @@ async function drawView() {
         })
         arrow.anchor.set(.5, 0)
 
-        let parallaxSkew = (1.3 - randomZMultiplier) * 400
+        let parallaxSkew = skewLevels[randomZIndex]
 
-        arrow.scale.set(.5 + randomZMultiplier * (frameWidth/1466) * 4)
+        arrow.scale.set(scaleLevels[randomZIndex])
 
-        arrow.zIndex = randomZMultiplier
+        arrow.zIndex = randomZIndex
 
-        arrow.tint = lerpGrayscaleHexColor(.9 + ((1 - randomZMultiplier) * .1));
+        arrow.tint = tintLevels[randomZIndex];
 
         let reference = point.clone().subtract(center)
 
