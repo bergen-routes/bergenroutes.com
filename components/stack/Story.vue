@@ -54,7 +54,7 @@ function openBRPosterImageviewer() {
                 <CarouselCompetition />
                 <p>
                     The original members of Bergen Routes have since graduated, the project itself has been
-                    rebranded and continues to be developed under the name [new brand].
+                    rebranded and continues to be developed under the name United Routes.
                 </p>
             </div>
         </div>

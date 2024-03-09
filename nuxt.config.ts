@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   // ssr: true,
   modules: [
     '@nuxtjs/google-fonts',
+    '@nuxt/image',
     'nuxt-icon',
     'vue3-carousel-nuxt'
   ],

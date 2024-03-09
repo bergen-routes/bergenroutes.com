@@ -76,7 +76,7 @@ const members = [
             <ul class="cards">
                 <li v-for="member in members">
                     <a :href="member.url">
-                        <img :src="member.icon">
+                        <NuxtImg :src="member.icon" />
                         <h1>{{ member.name }}</h1>
                         <h2>{{ member.title }}</h2>
                     </a>

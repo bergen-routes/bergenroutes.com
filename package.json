@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^1.4.0",
     "gsap": "^3.12.5",
     "nodemailer": "^6.9.11",
     "nuxt": "^3.10.3",
