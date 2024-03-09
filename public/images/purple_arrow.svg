@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="80.000015"
+   width="80"
    height="6399.9995"
-   viewBox="0 0 21.166671 1693.3332"
+   viewBox="0 0 21.166667 1693.3332"
    version="1.1"
    id="svg5390"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
@@ -42,7 +42,7 @@
      transform="translate(-102.35396,-42.142129)">
     <path
        id="rect5926"
-       style="fill:#ad84d6;fill-opacity:1;stroke-width:0.793748"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.793748"
        d="m 112.93728,42.142129 -10.58332,18.330663 h 6.65799 V 1735.4753 h 8.46665 V 60.472792 h 6.04203 z" />
   </g>
 </svg>
