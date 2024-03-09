@@ -107,7 +107,7 @@ async function drawView() {
 
         let parallaxSkew = (1.3 - randomZMultiplier) * 400
 
-        arrow.scale.set(.5 + randomZMultiplier * (frameWidth/1466))
+        arrow.scale.set(.5 + randomZMultiplier * (frameWidth/1466) * 4)
 
         arrow.zIndex = randomZMultiplier
 
@@ -134,15 +134,15 @@ async function drawView() {
             }
         }, {
             pixi: {
-                positionX: point.x - (xNormal * offsetMagnitude * 150),
-                positionY: point.y - (yNormal * offsetMagnitude * 150)
+                positionX: point.x - (xNormal * offsetMagnitude * 800),
+                positionY: point.y - (yNormal * offsetMagnitude * 800)
             },
-            duration: 1.5
+            duration: 2
         })
         tl.fromTo(arrow, {
             pixi: {
-                positionX: point.x - (xNormal * offsetMagnitude * 150),
-                positionY: point.y - (yNormal * offsetMagnitude * 150)
+                positionX: point.x - (xNormal * offsetMagnitude * 800),
+                positionY: point.y - (yNormal * offsetMagnitude * 800)
             }
         }, {
             pixi: {
@@ -155,6 +155,17 @@ async function drawView() {
                 scrub: .5
             }
         })
+        // tl.to(arrow, {
+        //     pixi: {
+        //         positionX: point.x - (xNormal * offsetMagnitude * 2000),
+        //         positionY: point.y - (yNormal * offsetMagnitude * 2000) + parallaxSkew
+        //     },
+        //     scrollTrigger: {
+        //         start: 0,
+        //         end: container.value.offsetHeight,
+        //         scrub: .5
+        //     }
+        // })
 
         arrow.addListener('destroyed', ()=>{tl.kill()})
     }

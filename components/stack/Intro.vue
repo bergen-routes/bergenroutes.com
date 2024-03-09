@@ -104,10 +104,14 @@ async function scrollToAbout() {
                 background-color: var(--brand-orange);
                 color: white;
                 border-color: var(--brand-orange-border);
+                cursor: pointer;
             }
 
             &>button.learn_more {
                 gap: .5rem;
+                background-color: white;
+                border-color: var(--g1);
+                cursor: pointer;
             }
         }
 
