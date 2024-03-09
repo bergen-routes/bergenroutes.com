@@ -18,11 +18,11 @@ onMounted(() => {
         mainImg.style.height = '100%'
     }
 
-    tl.fromTo(imageviewer.value, {
+    tl.set(imageviewer.value, {
         display: 'none'
-    }, {
-        display: 'flex',
-        duration: 0
+    })
+    tl.set(imageviewer.value, {
+        display: 'flex'
     })
     tl.fromTo(imageviewer.value, {
         opacity: 0
@@ -47,12 +47,9 @@ onMounted(() => {
         opacity: 0,
         duration: .3
     })
-    tl.to(imageviewer.value, {
-        display: 'none',
-        duration: 0
+    tl.set(imageviewer.value, {
+        display: 'none'
     })
-
-    tl.seek(0)
 })
 
 async function open() {
