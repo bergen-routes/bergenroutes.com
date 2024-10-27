@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
             return
         } catch (error) {
             console.error(error)
-            throw createError({statusCode: 500})
+            throw createError({statusCode: 500, statusMessage: error})
         }
     } else {
         throw createError({statusCode: 400})
@@ -30,13 +30,7 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-type ContactEmailParams = {
-    name: string
-    email: string
-    subject: string
-    message: string
-}
-function SendContactMail(params: ContactEmailParams) {
+function SendContactMail(params) {
     return transporter.sendMail({
         from: '"Contact Form" <ohadsfarkash@gmail.com>',
         to: "ohadsfarkash@gmail.com",
