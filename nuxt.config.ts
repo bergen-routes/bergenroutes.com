@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'vue3-carousel-nuxt'
   ],
+  nitro: {
+      prerender: {
+          routes: ["/"],
+          // ignore: ["/projects", "/tutorials", "/hire", "/switch-flicker"]
+      }
+  },
   googleFonts: {
     families: {
       Inter: '200..900',

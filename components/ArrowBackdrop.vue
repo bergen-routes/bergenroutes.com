@@ -41,7 +41,7 @@ async function init() {
     container.value.appendChild(app.canvas)
 
     const blurFilter = new BlurFilter();
-    blurFilter.blur = 3
+    blurFilter.strength = 3
     app.stage.filters = blurFilter
 }
 
