@@ -9,10 +9,9 @@ export default defineNuxtConfig({
     'vue3-carousel-nuxt'
   ],
   nitro: {
-      prerender: {
-          routes: ["/"],
-          // ignore: ["/projects", "/tutorials", "/hire", "/switch-flicker"]
-      }
+    prerender: {
+      autoSubfolderIndex: false
+    }
   },
   googleFonts: {
     families: {

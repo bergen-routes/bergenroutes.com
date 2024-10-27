@@ -10,6 +10,7 @@
                 <!-- <img src="/images/thumbnail_alt.svg"> -->
                 <iframe src="https://www.youtube.com/embed/1EK-AlE1HBM" title="" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen></iframe>
                 <p>
                     In the age of portable electronics, the use of maps and directories have become defunct.
@@ -24,6 +25,7 @@
                 <!-- <img src="/images/thumbnail_alt.svg"> -->
                 <iframe src="https://www.youtube.com/embed/1EK-AlE1HBM" title="" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen></iframe>
             </div>
         </div>
