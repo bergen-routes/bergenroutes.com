@@ -11,7 +11,8 @@ export default defineEventHandler(async (event) => {
             await SendContactMail({name, email, subject, message})
             setResponseStatus(event, 200)
             return
-        } catch {
+        } catch (error) {
+            console.error(error)
             throw createError({statusCode: 500})
         }
     } else {
