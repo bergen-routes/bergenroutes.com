@@ -3,17 +3,17 @@ const members = [
     {
         name: "Ohad Farkash",
         icon: "/images/team/ohad_farkash.jpg",
-        title: "Project Lead & Software Engineer",
+        title: "Software Engineer Bitch",
         url: "https://www.linkedin.com/in/ohad-farkash"
     }, {
         name: "Matthew Paccione",
         icon: "/images/team/matthew_paccione.jpg",
-        title: "Software Engineer",
+        title: "Full-Stack Software Engineer",
         url: "https://www.linkedin.com/in/matthew-paccione-373980240/"
     }, {
         name: "Lisa Nam",
         icon: "/images/team/lisa_nam.jpg",
-        title: "Full-Stack Engineer",
+        title: "Full-Stack Software Engineer",
         url: "https://www.linkedin.com/in/lisasnam/"
     }, {
         name: "Petar Petroski",
