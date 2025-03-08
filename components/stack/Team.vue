@@ -3,7 +3,7 @@ const members = [
     {
         name: "Ohad Farkash",
         icon: "/images/team/ohad_farkash.jpg",
-        title: "Software Engineer Bitch",
+        title: "Principal Software Engineer and Project Lead",
         url: "https://www.linkedin.com/in/ohad-farkash"
     }, {
         name: "Matthew Paccione",
