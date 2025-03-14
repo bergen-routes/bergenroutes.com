@@ -8,7 +8,7 @@ const members = [
     }, {
         name: "Matthew Paccione",
         icon: "/images/team/matthew_paccione.jpg",
-        title: "Full-Stack Software Engineer",
+        title: "Product Manager",
         url: "https://www.linkedin.com/in/matthew-paccione-373980240/"
     }, {
         name: "Lisa Nam",
@@ -38,7 +38,7 @@ const members = [
     }, {
         name: "Karla Santamaria",
         icon: "/images/team/karla_santamaria.jpg",
-        title: "Front End Developer",
+        title: "Front-End Developer",
         url: "https://www.linkedin.com/in/karla-santamaria-698b29242/"
     }, {
         name: "Agraw Mindaye",
@@ -48,7 +48,7 @@ const members = [
     }, {
         name: "Ron Cohen",
         icon: "/images/team/ron_cohen.jpg",
-        title: "Full-Stack Engineer & Media",
+        title: "Full-Stack Software Engineer & Media",
         url: "https://www.linkedin.com/in/ron-cohen-477376253/"
     }, {
         name: "Justin Diaz",
