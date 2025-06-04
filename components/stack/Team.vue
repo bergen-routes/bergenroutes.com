@@ -8,7 +8,7 @@ const members = [
     }, {
         name: "Matthew Paccione",
         icon: "/images/team/matthew_paccione.jpg",
-        title: "Project Manager",
+        title: "Product Manager",
         url: "https://www.linkedin.com/in/matthew-paccione-373980240/"
     }, {
         name: "Lisa Nam",
